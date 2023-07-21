@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/icons/font/bootstrap-icons.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
     <style>
 
         .fw-bold {
@@ -45,7 +48,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-success" href="{{ url('/') }}">
+                <a class="navbar-brand" style="color: rgb(39, 194, 0)" href="{{ url('/') }}">
                     <h2 class="fw-bold blinking-underline">DeskDev</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -53,14 +56,18 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav me-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold"style="color: rgb(39, 194, 0)" href="#">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold"style="color: rgb(39, 194, 0)" href="#">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold"style="color: rgb(39, 194, 0)" href="#">Configurações</a>
+                        </li>
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -75,7 +82,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-success fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bold" style="color: rgb(39, 194, 0)" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -101,5 +108,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
